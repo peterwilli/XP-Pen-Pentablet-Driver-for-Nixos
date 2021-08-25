@@ -56,7 +56,6 @@ stdenv.mkDerivation rec {
     chmod 755 "$out"
 
     chmod a+x $out/usr/lib/pentablet/pentablet.sh
-    cat $out/lib/udev/rules.d/10-xp-pen.rules
     runHook postInstall
     mkdir -p $out/bin
     makeWrapper $out/usr/lib/pentablet/pentablet.sh $out/bin/pentablet
